@@ -85,24 +85,3 @@ module.exports.appendText = function (text, separator) {
 module.exports.prependText = function (text, separator) {
   return insert(text, separator, 'prepend');
 };
-
-const { prependText, prependFile, appendText, appendFile } = require('gulp-append-prepend-no-trim');
-
-gulp.task('myawesometask', function () {
-  gulp
-    .src('index.html')
-    .pipe(prependFile('header.html'))
-    .pipe(prependText('<!-- HEADER -->'))
-    .pipe(appendText('<!-- FOOTER -->'))
-    .pipe(appendFile('footer.html'))
-    .pipe(gulp.dest('www/'));
-});
-
-function myAwesomeTask() {
-  return src('index.html')
-    .pipe(prependFile('header.html'))
-    .pipe(prependText('<!-- HEADER -->'))
-    .pipe(appendText('<!-- FOOTER -->'))
-    .pipe(appendFile('footer.html'))
-    .pipe(gulp.dest('www/'));
-}
