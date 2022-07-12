@@ -11,7 +11,7 @@
     "prepend",
     "insert"
   ],
-  "homepage": "https://github.com/NoczCore/gulp-append-prepend",
+  "homepage": "https://github.com/FlowerForWar/gulp-append-prepend-no-trim",
   "author": {
     "name": "James Hemery",
     "url": "https://github.com/JamesHemery/"
@@ -21,7 +21,7 @@
     "url": "git://github.com/JamesHemery/gulp-append-prepend.git"
   },
   "bugs": {
-    "url": "https://github.com/JamesHemery/gulp-append-prepend/issues"
+    "url": "https://github.com/FlowerForWar/gulp-append-prepend-no-trim/issues"
   },
   "licenses": [
     {
