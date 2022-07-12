@@ -29,7 +29,7 @@ function myAwesomeTask() {
     .pipe(prependText('<!-- HEADER -->'))
     .pipe(appendText('<!-- FOOTER -->'))
     .pipe(appendFile('footer.html'))
-    .pipe(gulp.dest('www/'));
+    .pipe(dest('www/'));
 }
 ```
 
