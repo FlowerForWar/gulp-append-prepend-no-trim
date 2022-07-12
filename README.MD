@@ -1,11 +1,6 @@
-# gulp-append-prepend
+# gulp-append-prepend-no-trim
 
 ### Fork from the original [gulp-append-prepend](https://github.com/JamesHemery/gulp-append-prepend) by [JamesHemery](https://github.com/JamesHemery).
-
-#### Changes made in the `stringify` function only:
-
-- Give more space between the key and the value
-- Trim the value for keys that don't have value, like `@noframes`.
 
 ---
 
