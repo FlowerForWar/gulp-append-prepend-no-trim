@@ -1,5 +1,14 @@
 # gulp-append-prepend
 
+### Fork from the original [gulp-append-prepend](https://github.com/JamesHemery/gulp-append-prepend) by [JamesHemery](https://github.com/JamesHemery).
+
+#### Changes made in the `stringify` function only:
+
+- Give more space between the key and the value
+- Trim the value for keys that don't have value, like `@noframes`.
+
+---
+
 Simple Gulp plugin.
 
 [![License:MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/JamesHemery/gulp-append-prepend/blob/master/LICENCE)
@@ -8,36 +17,40 @@ Simple Gulp plugin.
 
 ## Usage
 
-First, install gulp-append-prepend as a development dependency:
+First, install gulp-append-prepend-no-trim as a development dependency:
+
 ```
-npm install gulp-append-prepend --save-dev
+npm install gulp-append-prepend-no-trim --save-dev
 ```
 
 Then, add it to your gulpfile.js:
 
 ```javascript
-const gap = require('gulp-append-prepend');
+const { prependText, prependFile, appendText, appendFile } = require('gulp-append-prepend-no-trim');
 
-gulp.task('myawesometask', function(){
-    gulp.src('index.html')
-        .pipe(gap.prependFile('header.html'))
-        .pipe(gap.prependText('<!-- HEADER -->'))
-        .pipe(gap.appendText('<!-- FOOTER -->'))
-        .pipe(gap.appendFile('footer.html'))
-        .pipe(gulp.dest('www/'));
-});
+function myAwesomeTask() {
+  return src('index.html')
+    .pipe(prependFile('header.html'))
+    .pipe(prependText('<!-- HEADER -->'))
+    .pipe(appendText('<!-- FOOTER -->'))
+    .pipe(appendFile('footer.html'))
+    .pipe(gulp.dest('www/'));
+}
 ```
 
 This example works with html but you can use any type of file.
 
 ## Methods
-- ``appendFile(filepath, separator)`` The filepath can be an array. The separator is optional by default is "\n".
-- ``prependFile(filepath, separator)`` The filepath can be an array. The separator is optional by default is "\n".
-- ``appendText(text, separator)`` The text can be an array. The separator is optional by default is "\n".
-- ``prependText(text, separator)`` The text can be an array. The separator is optional by default is "\n".
+
+- `appendFile(filepath, separator)` The filepath can be an array. The separator is optional by default is "\n".
+- `prependFile(filepath, separator)` The filepath can be an array. The separator is optional by default is "\n".
+- `appendText(text, separator)` The text can be an array. The separator is optional by default is "\n".
+- `prependText(text, separator)` The text can be an array. The separator is optional by default is "\n".
 
 ## Licence
+
 This plugin is released under the [MIT licence](./LICENCE).
 
 ## Disclaimer
+
 Feel free to make changes in this README.
